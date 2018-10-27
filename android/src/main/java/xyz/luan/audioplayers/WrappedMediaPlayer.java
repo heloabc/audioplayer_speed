@@ -173,6 +173,10 @@ public class WrappedMediaPlayer implements MediaPlayer.OnPreparedListener, Media
         return this.releaseMode;
     }
 
+    public void setSpeed(float speed) {
+        return this.player.setPlaybackParams(this.player.getPlaybackParams().setSpeed(speed));
+    }
+
     @Override
     public void onPrepared(final MediaPlayer mediaPlayer) {
         this.prepared = true;

@@ -95,6 +95,10 @@ public class AudioplayersPlugin implements MethodCallHandler {
                 player.setReleaseMode(releaseMode);
                 break;
             }
+            case "setSpeed": {
+                final float speed = call.argument("speed");
+                player.setSpeed(speed);
+            }
             default: {
                 response.notImplemented();
                 return;
