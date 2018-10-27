@@ -3,6 +3,7 @@ package xyz.luan.audioplayers;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.media.AudioAttributes;
+import android.media.PlaybackParams;
 import android.os.Build;
 import android.os.Handler;
 
@@ -174,7 +175,8 @@ public class WrappedMediaPlayer implements MediaPlayer.OnPreparedListener, Media
     }
 
     public void setSpeed(float speed) {
-        return this.player.setPlaybackParams(this.player.getPlaybackParams().setSpeed(speed));
+        PlaybackParams p = this.player.getPlaybackParams();
+        this.player.setPlaybackParams(p.setSpeed(speed));
     }
 
     @Override
